@@ -1,0 +1,147 @@
+header {
+    padding: 58px 80px 0;
+    margin-bottom: 200px;
+
+    @media screen and (max-width: 767px) {
+        padding: 30px 20px 0;
+        margin-bottom: 140px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 32px;
+        font-family: 'ChronicleDisp';
+        text-transform: capitalize;
+
+        @media screen and (max-width: 767px) {
+            font-size: 28px;
+        }
+    }
+
+    .burger_input {
+        display: none;
+        
+        &:checked ~ .menu_list {
+            transform: translateY(0);
+        }
+
+        &:checked ~ .burger_label {
+            
+            &::before {
+                transform: translateY(+9px) rotate(-45deg);
+            }
+            
+            span {
+                opacity: 0;
+            }
+
+            &::after {
+                transform: translateY(-9px) rotate(+45deg);
+            }
+        }
+    }
+            
+
+    .burger_label {
+        display: none;
+
+        @media screen and (max-width: 767px){
+            height: 18px;
+            order: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        &::before, 
+        &::after,
+        span {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1.5px;
+            background-color: #fff;
+            transition: all 0.4s;
+        }
+    }
+
+    .menu_list {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s;
+
+        @media (max-width: 767px) {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            transform: translateY(-200%);
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+    }
+
+    .menu_link {
+        font-weight: 500;
+        font-size: 18px;
+        transition: all 0.4s;
+        position: relative;
+
+        @media screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+
+        &:hover {
+            color: #FBD784;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2.5px;
+            position: absolute;
+            top: 27px;
+            left: 50%;
+            background-color: #FBD784;
+            transform: translateX(-50%);
+            transition: all 0.4s;
+        }
+    }
+
+    .account {
+        font-size: 17px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media screen and (max-width: 767px) {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-image: url("@img/icons/icons.svg#person");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}

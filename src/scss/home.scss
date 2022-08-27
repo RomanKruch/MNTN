@@ -1,0 +1,77 @@
+.home {
+    margin-bottom: 750px;
+
+    @media screen and (max-width: 1219px) {
+        margin-bottom: 450px;
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 300px;
+    }
+
+    .container {
+        max-width: 980px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    &_subtitle {
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #FBD784;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        margin-bottom: 32px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 72px;
+            height: 2px;
+            background-color: #FBD784;
+        }
+    }
+
+    &_title {
+        font-weight: 400;
+        font-size: 88px;
+        font-family: 'ChronicleDisp';
+        text-transform: capitalize;
+        margin: 0 0 32px;
+
+        @media screen and (max-width: 767px) {
+            font-size: 50px;
+        }
+    }
+
+    &_link {
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        transition: all 0.4s;
+
+        &:hover {
+            color: #FBD784;
+        }
+
+        &:hover::after {
+            background-image: url("@img/icons/icons.svg#arrow_fill");
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 24px;
+            background-image: url("@img/icons/icons.svg#arrow");
+            background-position: center;
+            background-size: cover;
+            transition: all 0.4s;
+        }
+    }
+}
